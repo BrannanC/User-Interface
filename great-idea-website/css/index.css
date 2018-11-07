@@ -119,8 +119,17 @@ nav a:hover {
 /* ---- Top Half ---- */
 
 @keyframes spin {
-	from {transform: rotate3d(0,0,0,0) scale(1);}
-    to {transform: rotate3d(01,0,0,360deg) scale(1.2);}
+	0% {transform: rotate3d(0,0,0,0) scale(1);}
+	50% {transform: rotate3d(01,0,0,180deg) scale(1.2);}
+	100% {transform: rotate3d(01,0,0,360deg) scale(.4);}
+}
+
+@keyframes spin2 {
+	0% {transform: rotate3d(0,0,0,0) scale(1);}
+	25% {transform: rotate3d(1,0.5,0,180deg) scale(1.2);}
+	50% {transform: rotate3d(1,1,0,360deg) scale(2);}
+	75% {transform: rotate3d(-1,0.5,0,-180deg) scale(1.2);}
+	100% {transform: rotate3d(-1,1,0,-360deg) scale(1);}
 }
 
 .top-half {
@@ -156,7 +165,7 @@ nav a:hover {
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-	animation-timing-function: linear;
+	animation-timing-function: ease-in-out;
 }
 
 .top-half button {
@@ -169,6 +178,14 @@ nav a:hover {
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
+}
+
+.top-half button:hover {
+animation-name: spin2;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+animation-timing-function: ease-in-out;
 }
 
 /* ---- Bottom Half (Content) ---- */
